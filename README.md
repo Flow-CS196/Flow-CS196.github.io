@@ -7,7 +7,7 @@ About Flow
 
 Different Types of Syntax
 
-START - The start shape signals the first block of a new file and cannot be deleted. When writing a new file, connect your second statement to the start parallelogram. The code inside the start parallelogram will be executed.
+START - The start parallelogram signals the first block of a new file and cannot be deleted. When writing a new file, connect your second statement to the start parallelogram. The code inside the start parallelogram will be executed.
 
 SIMPLE - The simple rectangle just runs the code inside it.
 
