@@ -5,7 +5,7 @@ About Flow
 
   Flow spawned from a project we created for CS 196 at the University of Illinois Urbana-Champaign. Flow creates easy to follow, logical "flow" charts for novice developers. Simply drag and connect different types of boxes to create runnable flowcharts. Files are saved locally to save a project for later use or editing. 
 
-Different Types of Syntax
+Different Types of Boxes
 
 START - The start parallelogram signals the first block of a new file and cannot be deleted. When writing a new file, connect your second statement to the start parallelogram. The code inside the start parallelogram will be executed.
 
@@ -18,6 +18,10 @@ INPUT - The input oval allows the user to enter any input that can be evaluated 
 Saving and Loading
 
   Saving will save a project file with an assigned name locally on your computer. Use the load button to retrieve that file for editing or later use.
+  
+Scrolling
+
+  The working area is bigger than it initially seems: It is infinite. You can scroll around by dragging the empty space, and create as much space as you need for your project.
   
 Things You Shouldn't Do
 
