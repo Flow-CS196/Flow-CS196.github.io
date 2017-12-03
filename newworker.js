@@ -1,5 +1,4 @@
 var $ = {};
-$.count = 0;
 function write (word) {
 	postMessage(['p', "" + word]);
 }
