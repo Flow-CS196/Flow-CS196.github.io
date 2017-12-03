@@ -146,7 +146,7 @@ function codeMaker() {
         line = [tmp[2], tmp[1].value, tmp[3], tmp[4]];
 
         if (line[0] !== 'c' && line[2] === -1) {
-            line = ['e', line[1]];
+            line = ['e', line[0] === 'i' ? "" : line[1]];
         }
         code.push(line);
     }

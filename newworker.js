@@ -1,7 +1,7 @@
 var $ = {};
-
+$.count = 0;
 function write (word) {
-	postMessage(['p', word]);
+	postMessage(['p', "" + word]);
 }
 
 function writeln (word) {
@@ -23,23 +23,25 @@ $.closer = () => {
 };
 
 $.inputPrompter = (word, next) => {
-	postMessage(['i', next.toString(), word]);
+	postMessage(['i', next, word]);
 }
 
-$.inputEvaluator = (this) => {
+$.inputEvaluator = function() {
 	function $($) {
 		return eval($);
 	}
-	return $.call({}, this);
+	return $.call({}, this.word);
 	//this === {}, $ = the input. This prevents global variable access.
 }
 
 $.complexEvaluator = (words) => {
 	if (words[0] === 's') {
-		$.inputEvaluator(words[1]);
+		$.word = words[1];
+		$.inputEvaluator();
 		return words[2];
 	} else if (words[0] === 'c') {
-		let truth = $.inputEvaluator(words[1]);
+		$.word = words[1];
+		let truth = $.inputEvaluator();
 		if (truth) {
 			if (words[2] !== -1) {
 				return words[2];
@@ -57,14 +59,16 @@ $.complexEvaluator = (words) => {
 		$.inputPrompter(words[1], words[2]);
 		return -1;
 	} else if (words[0] === 'e') {
-		$.inputEvaluator(words[1]);
+		$.word = words[1];
+		$.inputEvaluator();
 		$.closer();
 		return -1;
 	}
 }
 
 $.runner = (next, code) => {
-	$.inputEvaluator(code);
+	$.word = code;
+	$.inputEvaluator();
 	while (next >= 0) {
 		//printer(next)
 		next = $.complexEvaluator($.functions[next]);
