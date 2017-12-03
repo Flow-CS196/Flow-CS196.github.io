@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html spellcheck= "false">
+	<head>
+		<title>FLOW</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="moseCSS.css">
+	</head>
+	<body>
+		<div id = "console">
+			<textarea id = "textbox"> </textarea>
+		</div>
+		<div id = "mainButtonsDiv">
+			<button id = "runButton" class = "mainButtons"> Run </button>
+			<button id = "stopButton" class = "mainButtons"> Stop </button>
+			<button id = "saveButton" class = "mainButtons"> Save </button>
+			<button id = "loadButton" class = "mainButtons"> Load </button>
+		</div>
+		<div id = "buttonPanel">
+			<button id = "buttonPanelTitle"> Code Boxes </button>
+			<button id = "simpleButton" class = "boxButtons"> Simple </button>
+			<button id = "conditionalButton" class = "boxButtons"> Conditional </button>
+			<button id = "inputButton" class = "boxButtons"> Input </button>
+		</div>
+		<div id = "codeArea">
+			<div id = "scrollElement"></div>
+			<svg id = "lineCanvas">
+				<defs>
+					<marker id="arrowHead" markerWidth="6" markerHeight="6" refY = "3" refX = "2" orient="auto">
+						<polygon points = "0 0, 6 3, 0 6" style="fill: #000000;" />
+					</marker>
+				</defs>
+			</svg>
+		</div>
+	</body>
+	<script src = "draggability.js"></script>
+	<script src = "codeboxBackend.js"></script>
+	<script src = "newmain.js"></script>
+	<script src = "codeSaver.js"></script> 
+</html>

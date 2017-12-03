@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+textarea {
+    resize: none;
+    font-family: Arial, Arial, sans-serif;
+    line-height: 1;
+    outline-style: none;
+}
+
+button:focus {
+    outline:0;
+}
+
+body {
+    background-color: black;
+}
+#textbox {
+    font-size: 100%;
+    border: none;
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    transform: translate(15px, 15px);
+}
+
+#console {
+    background-color: black;
+    width: 100%;
+    height: 20%;
+    position: fixed;
+    top: 80%
+}
+
+#mainButtonsDiv {
+    position:fixed;
+    min-width: 320px;
+    background-color: black;
+    width: 100%;
+    height: 40px;
+}
+
+.mainButtons {
+    background-color: black;
+    border: none;
+    border-radius: 0%;
+    color: white;
+    font-size: 20px;
+    width: 80px;
+    height: 40px;
+    float: left;
+}
+
+.mainButtons:hover {
+    background-color: white;
+    color: black;
+}
+#buttonPanel {
+    position: fixed;
+    height: calc(80% - 40px);
+    width: 160px;
+    min-width: 160px;
+    transform: translate(0, 40px);
+    background-color: lightgrey;
+}
+
+#buttonPanelTitle {
+    height: 60px;
+    width: 160px;
+    background-color: lightgrey;
+    color: black;
+    border: none;
+    border-left: 16px solid lightgrey;
+    font-size: 20px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.boxButtons {
+    background-color: lightgrey;
+    border: none;
+    border-radius: 0%;
+    border-left: 16px solid lightgrey;
+    color: black;
+    font-size: 20px;
+    width: 160px;
+    height: 40px;
+    text-align: left;
+}
+
+.boxButtons:hover {
+    background-color: black;
+    color: white;
+    border-left: 16px solid black;
+}
+
+#codeArea {
+    background-color:white;
+    position: fixed;
+    width: calc(100% - 160px);
+    height: calc(80% - 40px);
+    transform: translate(160px, 40px);
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#scrollElement {
+    width: 100%;
+    height: 100%;
+}
+
+.s_code {
+    font-size: 67.5%;
+    border:none;
+    width: 144px;
+    height: 44px;
+    background-color: #90EE90; /*GREEN*/
+}
+
+.s_box {
+    position: absolute;
+    height: 44px;
+    width: 144px;
+    border: 8px solid #3CB371;
+}
+
+.c_code {
+    font-size: 67.5%;
+    border: none;
+    width: 74.793px; /* 84√2 - 44 */
+    height: 44px;
+    transform: rotate(-45deg) translate(-10.887px, 17.198px); /* 42 - 22√2, 21√2 - 12.5 */
+    background-color: #FAFAD2; /*YELLOW*/
+}
+
+.c_box {
+    position: absolute;
+    background-color: #FAFAD2; /*YELLOW*/
+    height: 84px;
+    width: 84px;
+    border: 8px solid #F5DEB3;
+    transform: rotate(45deg);
+}
+
+.f_code { 
+    font-size: 67.5%;
+    border:none;
+    width: 128px;
+    height: 44px;
+    transform: skew(20deg) translate(8px, 0px);
+    background-color: #F08080; /*RED*/
+}
+
+.f_box {
+    position: absolute;
+    background-color: #F08080; /*RED*/
+    height: 44px;
+    width: 144px;
+    border: 8px solid #8B0000;
+    transform: skew(-20deg);
+}
+
+.i_code {
+    font-size: 67.5%;
+    border:none;
+    width: 108.779px; /* 64√26/3 */
+    height: 44px;
+    transform: translate(25.610px, 8px); /* 80 - 32√26/3 */
+    background-color: #00BFFF;
+}
+
+.i_box {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #00BFFF;
+    border: 8px solid #4682B4; /*BLUE*/
+    height: 60px;
+    width: 160px;
+}
+
+.connector_line {
+    position: absolute;
+    stroke: black;
+    stroke-width: 2px;
+}
+
+.connector_receiver {
+    position: absolute;
+    left: calc(50% - 8px);
+    top: -16px;
+    height: 12px;
+    width: 12px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.connector_primary {
+    position: absolute;
+    left: calc(50% - 8px);
+    top: 100%;
+    height: 12px;
+    width: 12px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.connector_secondary {
+    position: absolute;
+    left: calc(100% - 2.343px); /* 8 - 8/√2 */
+    top: -13.567px; /* 8 + 8/√2 */
+    height: 12px;
+    width: 12px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#lineCanvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#lineCanvas > line {
+    position: absolute;
+    stroke: black;
+    stroke-width: 2;
+    marker-end: url(#arrowHead);
+}
+
+#arrowHead {
+    pointer-events: none;
+}
+
