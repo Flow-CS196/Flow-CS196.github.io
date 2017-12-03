@@ -26,12 +26,12 @@ $.inputPrompter = (word, next) => {
 	postMessage(['i', next.toString(), word]);
 }
 
-$.inputEvaluator = (word) => {
+$.inputEvaluator = (this) => {
 	function $($) {
 		return eval($);
 	}
-	return $.call({}, word);
-	//this === {}, $ = word. This prevents global variable access.
+	return $.call({}, this);
+	//this === {}, $ = the input. This prevents global variable access.
 }
 
 $.complexEvaluator = (words) => {

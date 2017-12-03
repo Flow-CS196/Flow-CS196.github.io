@@ -20,9 +20,9 @@ body {
 #textbox {
     font-size: 100%;
     border: none;
-    width: calc(100% - 30px);
-    height: calc(100% - 30px);
-    transform: translate(15px, 15px);
+    width: 98%;
+    height: 90%;
+    transform: translate(1%, 10%);
 }
 
 #console {
