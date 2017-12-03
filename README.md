@@ -9,5 +9,17 @@ Different Types of Syntax
 
 START - The start shape signals the first block of a new file and cannot be deleted. When writing a new file, connect your second statement to the start parallelogram. 
 
-SIMPLE - The simple shape creates a block of code for statements just as "{}" would in JavaScript. 
+SIMPLE - The simple rectangle creates a block of code for statements just as "{}" would in JavaScript. 
+
+CONDITIONAL - The conditional diamond creates a conditional statement inside the file. 
+
+INPUT - The input oval allows the user to enter any input that can be evaluated by the eval() function. For example, entering the string "k = 7;" creates a new variable "k" containg the double "7" in Javascript. 
+
+Saving and Loading
+
+  Saving will save the Flow file locally to your computer. Use the load button to retrieve that file for editing or use later. 
+  
+Things You Shouldn't Do
+
+  Do not use the "$" as a variable or the keyword "this" in your file. 
   
