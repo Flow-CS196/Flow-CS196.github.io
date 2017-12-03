@@ -14,6 +14,7 @@
 			<button id = "stopButton" class = "mainButtons"> Stop </button>
 			<button id = "saveButton" class = "mainButtons"> Save </button>
 			<button id = "loadButton" class = "mainButtons"> Load </button>
+			<button id = "guideButton" class= "mainButtons"> Guide </button>
 		</div>
 		<div id = "buttonPanel">
 			<button id = "buttonPanelTitle"> Code Boxes </button>
@@ -36,4 +37,9 @@
 	<script src = "codeboxBackend.js"></script>
 	<script src = "newmain.js"></script>
 	<script src = "codeSaver.js"></script> 
+	<script>
+		document.getElementById("guideButton").onclick = function() {
+			console.log("Guide");
+		}
+	</script>
 </html>
