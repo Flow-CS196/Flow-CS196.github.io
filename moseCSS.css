@@ -68,8 +68,9 @@ body {
 }
 
 #buttonPanelTitle {
+    min-height: 4.5%;
+    max-height: 33.333%;
     height: 60px;
-    max-height: 33.333%; /* 1/3 */
     width: 160px;
     background-color: lightgrey;
     color: black;
@@ -86,7 +87,8 @@ body {
     font-size: 125%;
     width: 160px;
     height: 40px;
-    max-height: 22.222%; /* 2/9 */
+    min-height: 3%;
+    max-height: 22.222%;
     text-align: left;
 }
 
