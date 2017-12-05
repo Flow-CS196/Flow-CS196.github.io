@@ -18,17 +18,20 @@ offsetDict["c_box"] = [25.397, -25.397, -25.397, 20.711]; // (50 + (16 / √2))(
 offsetDict["i_box"] = [8, 0, -8, 0];
 var nullIndexCount = 0;
 
-window.addEventListener("resize", function() { //If we don't catch resize events and resize the lineCanvas accordingly, zoominng might break SVG line rendering.
-    scrollElement.style.width = Math.max(codeArea.scrollLeft + codeArea.offsetWidth, codeArea.scrollLeft + codeArea.offsetWidth + mouseX - scrollStartX) + "px";
-    scrollElement.style.height = Math.max(codeArea.scrollTop + codeArea.offsetHeight,  codeArea.scrollTop + codeArea.offsetHeight + mouseY - scrollStartY) + "px";
-    lineCanvas.style.width = scrollElement.style.width;
-    lineCanvas.style.height = scrollElement.style.height;
-});
+//If we don't catch resize events and resize the lineCanvas accordingly, zoominng might break SVG line rendering.
+window.addEventListener("resize", canvasResizer, false);
 window.addEventListener("mouseup", mouseUp, false);
 window.addEventListener("mousemove", moveStuff, false);
 window.addEventListener("keydown", deleteBox, false);
 window.ondragstart = function() {return false;}; //This fixes various bugs concerning drag events. It is ugly.
 codeArea.addEventListener("mousedown", startScrolling, false);
+
+function canvasResizer() {
+    scrollElement.style.width = Math.max(codeArea.scrollLeft + codeArea.offsetWidth, codeArea.scrollLeft + codeArea.offsetWidth + mouseX - scrollStartX) + "px";
+    scrollElement.style.height = Math.max(codeArea.scrollTop + codeArea.offsetHeight,  codeArea.scrollTop + codeArea.offsetHeight + mouseY - scrollStartY) + "px";
+    lineCanvas.style.width = scrollElement.style.width;
+    lineCanvas.style.height = scrollElement.style.height;
+}
 
 function addConnectorNodes(box) {
     let connector_receiver = document.createElement("div");
@@ -368,10 +371,7 @@ function moveStuff(e) {
         currentlyDragged.style.left = mouseX + offsetX + "px";
         boxLineOrient(currentlyDragged);
     } else if (currentlyScrolling) {
-        scrollElement.style.width = Math.max(codeArea.scrollLeft + codeArea.offsetWidth, codeArea.scrollLeft + codeArea.offsetWidth + mouseX - scrollStartX) + "px";
-        scrollElement.style.height = Math.max(codeArea.scrollTop + codeArea.offsetHeight, codeArea.scrollTop + codeArea.offsetHeight + mouseY - scrollStartY) + "px";
-        lineCanvas.style.width = scrollElement.style.width;
-        lineCanvas.style.height = scrollElement.style.height;
+        canvasResizer();
         codeArea.scrollBy(mouseX - scrollStartX, mouseY - scrollStartY);
         scrollStartX = mouseX;
         scrollStartY = mouseY;
