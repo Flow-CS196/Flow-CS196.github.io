@@ -18,6 +18,12 @@ offsetDict["c_box"] = [25.397, -25.397, -25.397, 20.711]; // (50 + (16 / √2))(
 offsetDict["i_box"] = [8, 0, -8, 0];
 var nullIndexCount = 0;
 
+window.addEventListener("resize", function() { //If we don't catch resize events and resize the lineCanvas accordingly, zoominng might break SVG line rendering.
+    scrollElement.style.width = Math.max(codeArea.scrollLeft + codeArea.offsetWidth, codeArea.scrollLeft + codeArea.offsetWidth + mouseX - scrollStartX) + "px";
+    scrollElement.style.height = Math.max(codeArea.scrollTop + codeArea.offsetHeight,  codeArea.scrollTop + codeArea.offsetHeight + mouseY - scrollStartY) + "px";
+    lineCanvas.style.width = scrollElement.style.width;
+    lineCanvas.style.height = scrollElement.style.height;
+});
 window.addEventListener("mouseup", mouseUp, false);
 window.addEventListener("mousemove", moveStuff, false);
 window.addEventListener("keydown", deleteBox, false);
@@ -363,7 +369,7 @@ function moveStuff(e) {
         boxLineOrient(currentlyDragged);
     } else if (currentlyScrolling) {
         scrollElement.style.width = Math.max(codeArea.scrollLeft + codeArea.offsetWidth, codeArea.scrollLeft + codeArea.offsetWidth + mouseX - scrollStartX) + "px";
-        scrollElement.style.height = Math.max(codeArea.scrollTop + codeArea.offsetHeight,  + codeArea.scrollTop + codeArea.offsetHeight + mouseY - scrollStartY) + "px";
+        scrollElement.style.height = Math.max(codeArea.scrollTop + codeArea.offsetHeight, codeArea.scrollTop + codeArea.offsetHeight + mouseY - scrollStartY) + "px";
         lineCanvas.style.width = scrollElement.style.width;
         lineCanvas.style.height = scrollElement.style.height;
         codeArea.scrollBy(mouseX - scrollStartX, mouseY - scrollStartY);
