@@ -20,6 +20,7 @@ var nullIndexCount = 0;
 
 //If we don't catch resize events and resize the lineCanvas accordingly, zoominng might break SVG line rendering.
 window.addEventListener("resize", canvasResizer, false);
+
 window.addEventListener("mouseup", mouseUp, false);
 window.addEventListener("mousemove", moveStuff, false);
 window.addEventListener("keydown", deleteBox, false);
