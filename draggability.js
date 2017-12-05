@@ -23,9 +23,11 @@ window.addEventListener("resize", canvasResizer, false);
 
 window.addEventListener("mouseup", mouseUp, false);
 window.addEventListener("mousemove", moveStuff, false);
-window.addEventListener("keydown", deleteBox, false);
-window.ondragstart = function() {return false;}; //This fixes various bugs concerning drag events. It is ugly.
 codeArea.addEventListener("mousedown", startScrolling, false);
+
+window.addEventListener("keydown", deleteBox, false); //We detect backspace with this.
+
+window.ondragstart = function() {return false;}; //This fixes various bugs concerning drag events. It is ugly.
 
 function canvasResizer() {
     scrollElement.style.width = Math.max(codeArea.scrollLeft + codeArea.offsetWidth, codeArea.scrollLeft + codeArea.offsetWidth + mouseX - scrollStartX) + "px";
