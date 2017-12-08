@@ -8,9 +8,9 @@
 	<script>
 		let URL = window.location.href;
 		if (URL[URL.length - 2] === '.') {
-			URL = '/' + URL.substring(0, URL.length - 2) + '/';
+			URL = URL.substring(0, URL.length - 2) + '/';
 			console.log(URL);
-			window.history.replaceState({urlPath: URL}, "FLOW", URL);
+			window.history.replaceState({}, "FLOW", URL);
 		}
 	</script>
 	<body>
