@@ -5,6 +5,12 @@
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" href="moseCSS.css">
 	</head>
+	<script>
+		let URL = window.location.href;
+		if (URL[URL.length - 1] === '.') {
+			window.location.replace(URL.substring(0, URL.length - 1));
+		}
+	</script>
 	<body>
 		<div id = "console">
 			<textarea id = "textbox"> </textarea>
