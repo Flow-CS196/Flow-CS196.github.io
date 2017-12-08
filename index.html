@@ -8,7 +8,7 @@
 	<script>
 		let URL = window.location.href;
 		if (URL[URL.length - 2] === '.') {
-			window.location.replace(URL.substring(0, URL.length - 2));
+			window.history.pushState({}, "FLOW", URL.substring(0, URL.length - 2) + '/');
 		}
 	</script>
 	<body>
