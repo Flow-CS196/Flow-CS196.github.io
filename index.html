@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html spellcheck= "false">
 	<head>
-		<title>FLOW</title>
+		<script>
+			let URL = window.location.href;
+			if (URL[URL.length - 2] === '.') {
+				window.location.replace(URL.substring(0, URL.length - 2));
+			}
+		</script>
+		<title> FLOW </title>
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" href="moseCSS.css">
 	</head>
-	<script>
-		let URL = window.location.href;
-		if (URL[URL.length - 2] === '.') {
-			window.location.replace(URL.substring(0, URL.length - 2));
-		}
-	</script>
 	<body>
 		<div id = "console">
 			<textarea id = "textbox"> </textarea>
