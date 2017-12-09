@@ -23,6 +23,10 @@ Scrolling
 
   The working area is bigger than it initially seems: It is infinite. You can scroll around by dragging the empty space, and create as much space as you need for your project.
   
+Deleting
+
+  If you press backspace while dragging a box, you will delete it. If you just want to remove connections you have made between boxes, right-click on the white circles that the connection lines start from or end at.
+  
 Things You Shouldn't Do
 
   Do not use the "$" or "this" as a variable.
