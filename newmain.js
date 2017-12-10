@@ -5,8 +5,8 @@ box.value = "";
 var worker = null;
 var runner = document.getElementById('runButton');
 var stopper = document.getElementById('stopButton');
-messages = [];
 runner.onclick = function() {
+    var messages = [];
     var funcs = codeMaker();
     if (worker !== null) {
         worker.terminate();
