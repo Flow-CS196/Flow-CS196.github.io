@@ -5,6 +5,7 @@ box.value = "";
 var worker = null;
 var runner = document.getElementById('runButton');
 var stopper = document.getElementById('stopButton');
+var messageCount = 0;
 runner.onclick = function() {
     var funcs = codeMaker();
     if (worker !== null) {
@@ -12,11 +13,15 @@ runner.onclick = function() {
     }
     worker = new Worker("newworker.js");
     worker.onmessage = function(event) {
+        ++messageCount;
         if (event.data[0] === 'p') {
             box.value += "" + event.data[1];
         } else if (event.data[0] === 'c') {
             box.value = "";
         } else if (event.data[0] === 'i') {
+            while(messageCount !== 1){
+                console.log("Waiting");
+            }
             let entry = prompt(event.data[2] + " = ?");
             if (entry === null || entry === "") {
                 worker.terminate();
@@ -28,6 +33,7 @@ runner.onclick = function() {
             worker.terminate();
             worker = null;
         }
+        --messageCount;
     };
     box.value = "";
     worker.postMessage(funcs);
