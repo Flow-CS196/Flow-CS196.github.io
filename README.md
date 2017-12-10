@@ -35,7 +35,7 @@ Printing Text to the Console
     
     writeln(arg) -> Prints the string representation of arg and a newline
     
-    clean() -> Cleans the console
+    clear() -> Cleans the console
 
 Delaying
 
