@@ -13,13 +13,11 @@ runner.onclick = function() {
     worker = new Worker("newworker.js");
     worker.onmessage = function(event) {
         var pos;
+        console.log(event.data);
         if (event.data[0] === 'p') {
             box.value += "" + event.data[1];
-            worker.postMessage("unlock");
-            console.log("Posted!");
         } else if (event.data[0] === 'c') {
             box.value = "";
-            worker.postMessage("unlock");
         } else if (event.data[0] === 'i') {
             let entry = prompt(event.data[2] + " = ?");
             if (entry === null || entry === "") {

@@ -1,8 +1,6 @@
 var $ = {};
 
 function write (word) {
-	while($.messageLock){}
-	$.messageLock = true;
 	postMessage(['p', "" + word]);
 }
 
@@ -11,8 +9,6 @@ function writeln (word) {
 }
 
 function clear () {
-	while($.messageLock){}
-	$.messageLock = true;
 	postMessage(['c']);
 }
 
@@ -23,14 +19,10 @@ function sleep (milliseconds) {
 }
 
 $.closer = () => {
-	while($.messageLock){}
-	$.messageLock = true;
 	postMessage(['e']);
 };
 
 $.inputPrompter = (word, next) => {
-	while($.messageLock){}
-	$.messageLock = true;
 	postMessage(['i', next, word]);
 }
 
@@ -92,8 +84,6 @@ $.creator = (rawFunctions) => {
 $.functions = [];
 
 this.onmessage = function (event) {
-	$.messageLock = false;
-	write(event.data);
 	if (event.data === "unlock") {
 		return;
 	}
