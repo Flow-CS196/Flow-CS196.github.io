@@ -12,8 +12,6 @@ runner.onclick = function() {
     }
     worker = new Worker("newworker.js");
     worker.onmessage = function(event) {
-        var pos;
-        console.log(event.data);
         if (event.data[0] === 'p') {
             box.value += "" + event.data[1];
         } else if (event.data[0] === 'c') {
