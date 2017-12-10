@@ -15,6 +15,7 @@ runner.onclick = function() {
     worker.onmessage = function(event) {
         messages.push(event.data);
         if (event.data[0] === 'p') {
+            console.log("Print pls");
             box.value += "" + event.data[1];
         } else if (event.data[0] === 'c') {
             box.value = "";
