@@ -15,7 +15,6 @@ runner.onclick = function() {
     }
     worker = new Worker("newworker.js");
     worker.onmessage = function(event) {
-        messages.push(event.data);
         if (event.data[0] === 'p') {
             setTimeout(box.update, 0, box.value + event.data[1]);
         } else if (event.data[0] === 'c') {
