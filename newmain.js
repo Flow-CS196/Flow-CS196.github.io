@@ -17,6 +17,8 @@ runner.onclick = function() {
         } else if (event.data[0] === 'c') {
             box.value = "";
         } else if (event.data[0] === 'i') {
+            box.style.visibility = "hidden";
+            box.style.visibility = "visible";
             let entry = prompt(event.data[2] + " = ?");
             if (entry === null || entry === "") {
                 worker.terminate();
