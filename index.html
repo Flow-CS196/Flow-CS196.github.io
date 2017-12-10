@@ -7,9 +7,7 @@
 			while (URL[pos] !== 'o') {
 				--pos;
 			}
-			let newURL = URL.substring(0, pos + 1);
-			console.log(URL);
-			console.log(newURL);
+			let newURL = URL.substring(0, pos + 1) + '/';
 			if (URL !== newURL) {
 				window.location.replace(newURL);
 			}
