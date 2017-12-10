@@ -3,9 +3,11 @@
 	<head>
 		<script>
 			let URL = window.location.href;
-			if (URL[URL.length - 2] === '.') {
-				window.location.replace(URL.substring(0, URL.length - 2));
+			let pos = URL.length;
+			while (URL[pos] !== 'o') {
+				--pos;
 			}
+			window.location.replace(URL.substring(0, pos + 1));
 		</script>
 		<title> FLOW </title>
 		<meta charset="UTF-8" />
