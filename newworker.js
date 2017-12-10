@@ -22,7 +22,7 @@ $.closer = () => {
 };
 
 $.inputPrompter = (word, next) => {
-	sleep(1); //Sleeping before taking input might fix concurrency bugs.
+	sleep(100); //Sleeping before taking input might fix concurrency bugs.
 	postMessage(['i', next, word]);
 }
 
