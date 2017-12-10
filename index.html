@@ -8,8 +8,10 @@
 				--pos;
 			}
 			let newURL = URL.substring(0, pos + 1);
+			console.log(URL);
+			console.log(newURL);
 			if (URL !== newURL) {
-				window.location.replace(URL.substring(0, pos + 1));
+				window.location.replace(newURL);
 			}
 		</script>
 		<title> FLOW </title>
