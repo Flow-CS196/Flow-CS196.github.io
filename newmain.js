@@ -1,12 +1,14 @@
 addBox('f');
 
 var box = document.getElementById('textbox');
+box.update = function(content) {
+    box.value = content;
+}
 box.value = "";
 var worker = null;
 var runner = document.getElementById('runButton');
 var stopper = document.getElementById('stopButton');
 runner.onclick = function() {
-    var messages = [];
     var funcs = codeMaker();
     if (worker !== null) {
         worker.terminate();
@@ -15,9 +17,7 @@ runner.onclick = function() {
     worker.onmessage = function(event) {
         messages.push(event.data);
         if (event.data[0] === 'p') {
-            console.log("Print pls");
-            box.value += "" + event.data[1];
-            console.log(box.value);
+            setTimeout(box.update, 0, box.value + event.data[1]);
         } else if (event.data[0] === 'c') {
             box.value = "";
         } else if (event.data[0] === 'i') {
@@ -32,7 +32,6 @@ runner.onclick = function() {
             worker.terminate();
             worker = null;
         }
-        console.log(messages);
     };
     box.value = "";
     worker.postMessage(funcs);
