@@ -27,6 +27,17 @@ Deleting
 
   If you press backspace while dragging a box, you will delete it. If you just want to remove connections you have made between boxes, right-click on the white circles that the connection lines start from or end at.
   
+Printing Text to the Console
+
+  There are predefined functions you can use to manipulate the text on the console. These are:
+    write(arg) -> Prints the string representation of arg
+    writeln(arg) -> Prints the string representation of arg and a newline
+    clean() -> Cleans the console
+
+Delaying
+
+  If you want to introduce delays in your flowchart, you can do so with the sleep(arg) function, where arg is the duration of the delay in milliseconds.
+  
 Things You Shouldn't Do
 
   Do not use the "$" or "this" as a variable.
