@@ -18,16 +18,13 @@ runner.onclick = function() {
         } else if (event.data[0] === 'c') {
             box.value = "";
         } else if (event.data[0] === 'i') {
-            let inputAsker = function() {
-                let entry = prompt(event.data[2] + " = ?");
-                if (entry === null || entry === "") {
-                    worker.terminate();
-                    worker = null;
-                } else {
-                    worker.postMessage(['i', event.data[1], event.data[2] + "=" + entry]);
-                }
-            };
-            window.requestAnimationFrame(inputAsker);
+            let entry = prompt(event.data[2] + " = ?");
+            if (entry === null || entry === "") {
+                worker.terminate();
+                worker = null;
+            } else {
+                worker.postMessage(['i', event.data[1], event.data[2] + "=" + entry]);
+            }
         } else if (event.data[0] === 'e') {
             worker.terminate();
             worker = null;
