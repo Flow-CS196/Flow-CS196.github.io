@@ -2,6 +2,7 @@ addBox('f');
 
 var box = document.getElementById('textbox');
 box.value = "";
+
 var worker = null;
 var runner = document.getElementById('runButton');
 var stopper = document.getElementById('stopButton');
@@ -17,6 +18,7 @@ runner.onclick = function() {
         } else if (event.data[0] === 'c') {
             box.value = "";
         } else if (event.data[0] === 'i') {
+            window.requestAnimationFrame(function(){});
             let entry = prompt(event.data[2] + " = ?");
             if (entry === null || entry === "") {
                 worker.terminate();
