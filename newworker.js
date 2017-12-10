@@ -94,6 +94,7 @@ $.functions = [];
 this.onmessage = function (event) {
 	$.messageLock = false;
 	if (event.data === "unlock") {
+		write("unlock");
 		return;
 	}
 	if (event.data[0] === 'i') {
