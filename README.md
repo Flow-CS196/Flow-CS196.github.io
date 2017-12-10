@@ -7,7 +7,7 @@ About Flow
 
 Different Types of Boxes
 
-START - The start parallelogram is the starting point of the flowchart and it cannot be deleted. When you're making a new flowchart, connect your second box to the start parallelogram. The code inside the start parallelogram is executed.
+START - The start parallelogram is the starting point of the flowchart and it cannot be deleted. When you are making a new flowchart, connect your second box to the start parallelogram. The code inside the start parallelogram is executed.
 
 SIMPLE - The simple rectangle just runs the code inside it.
 
