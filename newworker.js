@@ -2,7 +2,6 @@ var $ = {};
 
 function write (word) {
 	postMessage(['p', "" + word]);
-	console.log(word);
 }
 
 function writeln (word) {
@@ -85,9 +84,6 @@ $.creator = (rawFunctions) => {
 $.functions = [];
 
 this.onmessage = function (event) {
-	if (event.data === "unlock") {
-		return;
-	}
 	if (event.data[0] === 'i') {
 		$.runner(event.data[1], event.data[2]);
 	} else {
