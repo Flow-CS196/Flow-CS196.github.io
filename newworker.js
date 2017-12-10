@@ -2,6 +2,7 @@ var $ = {};
 
 function write (word) {
 	postMessage(['p', "" + word]);
+	console.log(word);
 }
 
 function writeln (word) {
