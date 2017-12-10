@@ -3,12 +3,14 @@
 	<head>
 		<script>
 			let URL = window.location.href;
-			console.log(URL);
 			let pos = URL.length;
 			while (URL[pos] !== 'o') {
 				--pos;
 			}
-			window.location.replace(URL.substring(0, pos + 1));
+			let newURL = URL.substring(0, pos + 1);
+			if (URL !== newURL) {
+				window.location.replace(URL.substring(0, pos + 1));
+			}
 		</script>
 		<title> FLOW </title>
 		<meta charset="UTF-8" />
