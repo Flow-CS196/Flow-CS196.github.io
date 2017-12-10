@@ -93,6 +93,9 @@ $.functions = [];
 
 this.onmessage = function (event) {
 	$.messageLock = false;
+	if (event.data === "unlock") {
+		return;
+	}
 	if (event.data[0] === 'i') {
 		$.runner(event.data[1], event.data[2]);
 	} else {
