@@ -23,6 +23,7 @@ $.closer = () => {
 };
 
 $.inputPrompter = (word, next) => {
+	sleep(10);
 	postMessage(['i', next, word]);
 }
 
