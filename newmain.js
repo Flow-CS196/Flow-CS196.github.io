@@ -19,9 +19,8 @@ runner.onclick = function() {
         } else if (event.data[0] === 'c') {
             box.value = "";
         } else if (event.data[0] === 'i') {
-            while(messageCount !== 1){
-                console.log("Waiting");
-            }
+            console.log(messageCount);
+            while(messageCount !== 1){}
             let entry = prompt(event.data[2] + " = ?");
             if (entry === null || entry === "") {
                 worker.terminate();
