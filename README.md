@@ -30,8 +30,11 @@ Deleting
 Printing Text to the Console
 
   There are predefined functions you can use to manipulate the text on the console. These are:
+  
     write(arg) -> Prints the string representation of arg
+    
     writeln(arg) -> Prints the string representation of arg and a newline
+    
     clean() -> Cleans the console
 
 Delaying
