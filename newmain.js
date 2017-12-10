@@ -1,9 +1,6 @@
 addBox('f');
 
 var box = document.getElementById('textbox');
-box.update = function(content) {
-    box.value = content;
-}
 box.value = "";
 var worker = null;
 var runner = document.getElementById('runButton');
@@ -16,7 +13,7 @@ runner.onclick = function() {
     worker = new Worker("newworker.js");
     worker.onmessage = function(event) {
         if (event.data[0] === 'p') {
-            setTimeout(box.update, 0, box.value + event.data[1]);
+            box.value += "" + event.data[1];
         } else if (event.data[0] === 'c') {
             box.value = "";
         } else if (event.data[0] === 'i') {
