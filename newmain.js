@@ -16,6 +16,7 @@ runner.onclick = function() {
         if (event.data[0] === 'p') {
             box.value += "" + event.data[1];
             worker.postMessage("unlock");
+            console.log("Posted!");
         } else if (event.data[0] === 'c') {
             box.value = "";
             worker.postMessage("unlock");
