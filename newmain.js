@@ -17,6 +17,7 @@ runner.onclick = function() {
         if (event.data[0] === 'p') {
             console.log("Print pls");
             box.value += "" + event.data[1];
+            console.log(box.value);
         } else if (event.data[0] === 'c') {
             box.value = "";
         } else if (event.data[0] === 'i') {
