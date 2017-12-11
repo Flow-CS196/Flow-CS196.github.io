@@ -18,9 +18,6 @@ runner.onclick = function() {
         } else if (event.data[0] === 'c') {
             box.value = "";
         } else if (event.data[0] === 'i') {
-            let console = box.parentNode;
-            console.removeChild(box);
-            console.appendChild(box);
             let entry = prompt(event.data[2] + " = ?");
             if (entry === null || entry === "") {
                 worker.terminate();
