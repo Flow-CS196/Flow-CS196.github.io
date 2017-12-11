@@ -23,7 +23,7 @@ $.closer = () => {
 };
 
 $.inputPrompter = (word, next) => {
-	//sleep(17); //Some sleeping guarantees that if there is text we want to print, it will be printed before the input prompt. 17 > 1000/60
+	sleep(17); //Some sleeping guarantees that if there is text we want to print, it will be printed before the input prompt. 17 > 1000/60
 	postMessage(['i', next, word]);
 }
 
