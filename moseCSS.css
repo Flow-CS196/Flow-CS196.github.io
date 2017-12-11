@@ -22,6 +22,7 @@ body {
     background-color: black;
 }
 #textbox {
+    z-index: 0;
     font-size: 100%;
     border: none;
     width: calc(100% - 20px);
