@@ -2,6 +2,8 @@
 <html spellcheck= "false">
 	<head>
 		<script>
+			/*	Sometimes, the URL can have garbage characters at the end, messing with saving/loading. 
+				This scripts prevents that. */
 			let URL = window.location.href;
 			let pos = URL.length;
 			while (URL[pos] !== 'o') {
@@ -49,6 +51,7 @@
 	<script src = "newmain.js"></script>
 	<script src = "codeSaver.js"></script> 
 	<script>
+		// Makes the Guide button work.
 		document.getElementById("guideButton").onclick = function() {
 			window.open("https://github.com/Flow-CS196/Flow-CS196.github.io/blob/master/README.md");
 		}

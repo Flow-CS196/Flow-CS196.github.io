@@ -9,7 +9,6 @@ var codeBoxArr = [];
  *                      's' means a simple box that leads to its primary connection box.
  *                      'i' means 'input'. It prompts the user to enter an expression that is assigned to the variable it contains. It leads to its primary connection box.
  *                      'c' means 'conditional'. It leads to its primary connection box if its condition it true. Else, it leads to its secondary connection box.
- *                      'e' means 'end'. The program halts when these boxes are reached. The code inside them is executed before this happens.
  */
 function addBox(type) {
     /*codeBox contains: A div that contatins a textarea and can be dragged around, a textarea that is a child of the div, a type (f, s, i, c, or e), its primary connection, its secondary connection,
