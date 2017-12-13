@@ -2,17 +2,8 @@
 CS 196 Project - Flow
 
 Collaborators:
-Mose Mizrahi
 
-Julıa Son
-
-Zihe Wu
-
-Anthony Carta
-
-Otto Piramuthu
-
-Rıshu Bagga
+Mose Mizrahi, Julia Son, Zihe Wu, Anthony Carta, Otto Piramuthu, Rishu Bagga
 
 About Flow
 
