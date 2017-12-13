@@ -1,6 +1,14 @@
 # Flow-CS196.github.io
 CS 196 Project - Flow
 
+Collaborators:
+Mose Mizrahi
+Julıa Son
+Zıhe Wu
+Anthony Carta
+Otto Piramuthu
+Rıshu Bagga
+
 About Flow
 
   Flow is the project we created for CS 196 at the University of Illinois Urbana-Champaign. Flow creates easy to follow, logical "flow" charts for novice developers. Simply drag and connect different types of boxes to create runnable flowcharts of JavaScript code. Files are saved locally to save a project for later use or editing. 
